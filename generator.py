@@ -1,0 +1,12 @@
+name = input("Enter template filename: ")
+r1 = int(input("Enter range start: "))
+r2 = int(input("Enter range end: "))
+f = open(name, "r")
+content = f.read()
+for i in range(r1, r2+1):
+    f2 = open(name.replace(".", str(i) + "."), "w")
+    f2.write(content.replace("@#@", str(i)))
+    f2.close()
+print("Done!")
+f.close()
+print("Complete!")
